@@ -6,6 +6,7 @@ define([
 ], function($, Backbone, MovieSummaryView, MoviesCollection) {
     
     var MovieListView = Backbone.View.extend({
+
         el: '.movie-search',
         filter: null,
         geoMarkers:[],
@@ -17,8 +18,6 @@ define([
         initialize: function(options) {
             this.map = options.map;
             this.geocoder = options.geocoder;
-
-            console.log(this.map);
         },
         
         filterList: function(ev) {
@@ -27,7 +26,6 @@ define([
         },
 
         render: function() {
-            console.log("rendering list");
             var isMatchedMovie = true,
                 view = null,
                 title = '',
@@ -36,14 +34,14 @@ define([
             this.$(".movie-list").empty();
             
             //kill the render after it has cleared if the filter is empty
-            if (this.filter.length == 0) { return; }
+            if (this.filter.length === 0) { return; }
             
             var filter = this.filter.toLowerCase();
-            var movielist = this.collection.select(function(movie) { 
+            var movielist = this.collection.select(function(movie) {
                 
-                title = movie.get("Title").toLowerCase();
+                title = movie.get("title").toLowerCase();
                 //sift out empty locations
-                locations = movie.get("Locations") || false;
+                locations = movie.get("locations") || false;
                 isMatchedMovie = title.indexOf(filter) !== -1 && locations != false;
 
                 if (isMatchedMovie === true) {
@@ -59,17 +57,20 @@ define([
             }, this);
 
             //get the length of the movie list here
-            if (movielist.length == 0) {
+            if (movielist.length === 0) {
                 this.$(".movie-list").append('No results');
             }
         },
 
-        getGeoMarkers: function() { return this.geoMarkers; },
-        setGeoMarkers: function(geoMarker) { 
-            if (geoMarker == null) {
+        getGeoMarkers: function() {
+            return this.geoMarkers;
+        },
+
+        setGeoMarkers: function(geoMarker) {
+            if (geoMarker === null) {
                 this.geoMarkers = [];
-            } else { 
-                this.geoMarkers.push(geoMarker) 
+            } else {
+                this.geoMarkers.push(geoMarker);
             }
         }
     });

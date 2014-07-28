@@ -6,6 +6,7 @@ define([
 ], function($, Backbone, summaryTemplate, MovieDetailsView) {
     
     var MovieSummaryView = Backbone.View.extend({
+
         tagName: 'li',
         className: 'list-group-item movie-summary',
         map: null,
@@ -28,7 +29,7 @@ define([
 
         onSelected: function() {
 
-            var location = this.model.get("Locations");
+            var location = this.model.get("locations");
             if (location.indexOf("(")) {
                 this.setAddress(location.substring(location.indexOf("("), location.length - 1));
             } else {
@@ -64,7 +65,7 @@ define([
             var markers = this.parent.getGeoMarkers();
             _.each(markers, function(marker) {
                 marker.setMap(null);
-            });              
+            });
             this.parent.setGeoMarkers(null);
         }
     });

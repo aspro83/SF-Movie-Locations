@@ -1,19 +1,21 @@
 define([
     'backbone'
-    ], function(Backbone) {
+], function(Backbone) {
 
     var Movie = Backbone.Model.extend({
-        Title: "",
-        ReleaseYear: null,
-        // Location: {},
-        Locations: null,
-        FunFacts: null,
-        Actor1: null,
-        Actor2: null,
-        Actor3: null,
-        Director: null,
-        ProductionCompany: null,
-        Distributor: null
+
+        title: '',
+        release_year: '',
+        locations: '',
+        actor_1: '',
+        actor_2: '',
+        actor_3: '',
+
+        // To use later is needed
+        fun_facts: '',
+        director: '',
+        production_company: '',
+        distributor: ''
     
     });
 

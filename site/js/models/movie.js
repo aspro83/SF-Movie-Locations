@@ -5,7 +5,7 @@ define([
     var Movie = Backbone.Model.extend({
         defaults: {
             title: '',
-            release_year: '',
+            release_year: 'Unknown',
             locations: '',
             director: '',
             actor_1: '',

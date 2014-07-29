@@ -24,7 +24,19 @@ define([
         },
 
         setUpMap: function() {
+
             var mapDiv = $("#map-canvas")[0];
+
+            // resize mapcontainer to be mostly full screen
+            var setMapSize = function() {
+                if ($(window).width() >= 500) {
+                    $(mapDiv).height($(window).height());
+                } else {
+                    $(mapDiv).height(350);
+                }
+            };
+            $(window).resize(setMapSize);
+            setMapSize();
             
             var mapOptions = {
                 center: new google.maps.LatLng(37.7833, -122.4167),
@@ -39,18 +51,6 @@ define([
             };
             this.map = new google.maps.Map(mapDiv, mapOptions);
             this.geocoder = new google.maps.Geocoder();
-
-            // resize map to be mostly full screen
-            var $win = $(window);
-            var setMapSize = function() {
-                if ($win.width() >= 500) {
-                    $(mapDiv).height($win.height());
-                } else {
-                    $(mapDiv).height(300);
-                }
-            };
-            $win.resize(setMapSize);
-            setMapSize();
         },
 
         fetched: function() {

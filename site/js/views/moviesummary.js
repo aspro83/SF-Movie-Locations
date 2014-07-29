@@ -23,12 +23,11 @@ define([
         },
 
         render: function() {
-          this.$el.html(this.template(this.model.attributes));
-          return this;
+            this.$el.html(this.template(this.model.attributes));
+            return this;
         },
 
         onSelected: function() {
-
             var location = this.model.get("locations");
             if (location.indexOf("(")) {
                 this.setAddress(location.substring(location.indexOf("("), location.length - 1));
@@ -54,9 +53,6 @@ define([
                     google.maps.event.addListener(marker, 'click', function () {
                         displayInfoWindow(location);
                     });
-
-                } else {
-                    alert("Geocode was not successful for the following reason: " + status);
                 }
             });
         },

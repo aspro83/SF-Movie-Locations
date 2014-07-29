@@ -16,12 +16,10 @@ define([
                 dataType: 'jsonp',
                 success : this.onFetchSuccess.bind(this)
             });
-            
         },
         onFetchSuccess: function(model, response) {
             this.reset(model);
         }
-            
     });
 
     return MoviesCollection;

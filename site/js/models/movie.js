@@ -17,8 +17,6 @@ define([
             production_company: '',
             distributor: ''
         }
-        
-    
     });
 
     return Movie;

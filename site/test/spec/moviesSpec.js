@@ -1,5 +1,5 @@
 describe('tests for Movie model', function() {
-var movies;
+    var movies;
 
     // Use require.js to fetch the module
     it("should load the AMD module", function(done) {
@@ -11,8 +11,6 @@ var movies;
     });
 
     it('Can add Model instances as objects and arrays.', function() {
-        // var todos = new TodoList();
-
         expect(movies.length).toBe(0);
 
         // test single add

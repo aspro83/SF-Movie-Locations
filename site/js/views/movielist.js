@@ -26,6 +26,9 @@ define([
         },
 
         render: function() {
+            // Goes through the movies collection matching movie titles with the filter
+            // Appends and calls render for each matched moviesummary view
+
             var isMatchedMovie = true,
                 view = null,
                 title = '',
@@ -56,7 +59,7 @@ define([
                 return isMatchedMovie;
             }, this);
 
-            //get the length of the movie list here
+            // Handle empty matches
             if (movielist.length === 0) {
                 this.$(".movie-list").append('No results');
             }

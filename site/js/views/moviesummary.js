@@ -28,6 +28,7 @@ define([
         },
 
         onSelected: function() {
+            // Pulls the address from the locations prop (might be in parentheses '(100 Fake St)' )
             var location = this.model.get("locations");
             if (location.indexOf("(")) {
                 this.setAddress(location.substring(location.indexOf("("), location.length - 1));
@@ -38,6 +39,9 @@ define([
             view.render();
         },
         setAddress: function(address) {
+            // Uses the google map geocoder to determine the locations based on the address param
+            // Adds the marker to the map and center it
+
             var fullAddress = address + " San Francisco, CA";
             var _this = this;
             this.geocoder.geocode( { 'address': fullAddress}, function(results, status) {
@@ -50,9 +54,6 @@ define([
                         position: results[0].geometry.location
                     });
                     _this.parent.setGeoMarkers(marker);
-                    google.maps.event.addListener(marker, 'click', function () {
-                        displayInfoWindow(location);
-                    });
                 }
             });
         },

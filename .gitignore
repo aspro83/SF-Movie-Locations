@@ -1,3 +1,4 @@
 venv
 flask
 *.pyc
+*.DS_Store

@@ -1,6 +1,10 @@
 SF-Movie-Locations
 ==================
 
+The javascript app is set up as a stand alone site. No dependencies. It uses an external url to pull the movie data. If you wish to use the Python code in the api folder to create your own local backend, you can change the url the Movies collection uses.
+site/js/collections/movies.js
+
+-------------------------
 I chose the movie locations project for the challenge mostly because I love movies. Food trucks were a close second.
 I did a full stack solution.
 

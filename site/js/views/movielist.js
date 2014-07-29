@@ -9,7 +9,7 @@ define([
 
         el: '.movie-search',
         filter: null,
-        geoMarkers:[],
+        geoMarkers: [],
         
         events: {
             "keyup #movie-name-search" : "filterList"

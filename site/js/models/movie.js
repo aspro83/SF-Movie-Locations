@@ -3,19 +3,21 @@ define([
 ], function(Backbone) {
 
     var Movie = Backbone.Model.extend({
+        defaults: {
+            title: '',
+            release_year: '',
+            locations: '',
+            director: '',
+            actor_1: '',
+            actor_2: '',
+            actor_3: '',
 
-        title: '',
-        release_year: '',
-        locations: '',
-        actor_1: '',
-        actor_2: '',
-        actor_3: '',
-
-        // To use later is needed
-        fun_facts: '',
-        director: '',
-        production_company: '',
-        distributor: ''
+            // To use later if needed
+            fun_facts: '',
+            production_company: '',
+            distributor: ''
+        }
+        
     
     });
 

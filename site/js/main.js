@@ -4,8 +4,7 @@ require.config({
     jquery: 'libs/jquery-min',
     underscore: 'libs/underscore-min',
     backbone: 'libs/backbone-min',
-    text: 'libs/text',
-    autocomplete: 'libs/backbone.autocomplete.min'
+    text: 'libs/text'
   },
   shim: {
         'underscore': {
@@ -14,10 +13,6 @@ require.config({
         'backbone': {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
-        },
-        'autocomplete': {
-            deps: ['backbone', 'jquery']
-            // exports: 'typeahead'
         }
     }
 });

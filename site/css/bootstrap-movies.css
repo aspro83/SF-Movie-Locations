@@ -1,6 +1,11 @@
 .movie-search-container h1 { font-size: 30px; }
-.movie-search-container .panel .panel-heading { background-color: #E2F3DA; font-size: 16px; }
-.movie-search-container .movie-search .list-group { height: 550px; overflow-y: scroll;  }
+.movie-search-container .panel .panel-heading { font-size: 16px; }
+.movie-search-container .movie-search .list-group { height: 400px; overflow-y: scroll;  }
 .movie-search-container .movie-search .list-group li { padding: 0; }
 .movie-search-container .movie-search .list-group li a { display: block; padding: 10px 15px; }
-.movie-search-container .movie-search .list-group li a:hover { text-decoration: none; background-color: #f5f5f5;}
+.movie-search-container .movie-search .list-group li a:hover { text-decoration: none; background-color: #f5f5f5; }
+
+@media only screen
+and (max-width : 320px) {
+	.movie-search-container .movie-search .list-group { height: 200px; overflow-y: scroll;  }
+}
